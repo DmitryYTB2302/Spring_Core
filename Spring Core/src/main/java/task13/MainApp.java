@@ -15,7 +15,7 @@ public class MainApp {
         orderService.addProductToCart("Продукт № 5");
         orderService.addProductToCart("Продукт № 10");
 
-        orderService.findByTitle("Продукт 1");
+        orderService.findByTitle("Продукт № 2");
 
         orderService.makeOrder();
 

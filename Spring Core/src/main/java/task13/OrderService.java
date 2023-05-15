@@ -36,6 +36,8 @@ public class OrderService {
     }
 
     public void findByTitle(String title){
-        System.out.println(productService.findByTitle(title));
+        Product product = productService.findByTitle(title);
+        if(product != null) System.out.println(product);
+        else System.out.println("Товар: " + title + " не найден!");
     }
 }
