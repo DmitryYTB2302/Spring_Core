@@ -14,15 +14,20 @@ public class ProductService {
     @PostConstruct
     public void init() {
         for (int i = 1; i <= 10; i++) {
-            products.add(new Product(String.valueOf(i), "Продукт № " + i, i * 10.0));
+            products.add(new Product(i , "Продукт № " + i, i * 10.0));
         }
     }
 
     public void printAll() {
-        products.forEach(System.out::println);
+        for(Product p : products){
+            System.out.println(p.toString());
+        }
     }
 
     public Product findByTitle(String title) {
-        return products.stream().filter(product -> product.getTitle().equals(title)).findFirst().orElse(null);
+        for(Product p : products){
+            if(p.getTitle().equals(title)) return p;
+        }
+        return null;
     }
 }
